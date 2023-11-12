@@ -33,6 +33,9 @@ st.write('This app demonstrates how to perform simple linear regression using Py
 # Add a slider for the user to input x
 x = st.slider('Input x:', 0, 100)
 
+number = st.number_input('Insert a number')
+st.write('The current number is ', number)
+
 # Predict y from x and display the result
 y = predict(x)
 st.write(f'Predicted y: {y:.2f}')

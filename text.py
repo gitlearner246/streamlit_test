@@ -1,9 +1,7 @@
 import streamlit as st
 
-st.header('This is a header with a divider', divider='rainbow')
 st.header('_Streamlit_ is :blue[cool] :sunglasses:')
 
-st.subheader('This is a subheader with a divider', divider='rainbow')
 st.subheader('_Streamlit_ is :blue[cool] :sunglasses:')
 
 st.caption('This is a string that explains something above.')
@@ -20,6 +18,17 @@ st.latex(r'''
     ''')
 
 st.slider("This is a slider", 0, 100, (25, 75))
+
+
+
+
+number = st.number_input('Input any number', 0)
+st.write(number)
+
+number = st.number_input('decimal number', 0.0)
+st.write(number)
+
+
 
 st.markdown("*Streamlit* is **really** ***cool***.")
 st.markdown('''
