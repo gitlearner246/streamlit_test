@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+import time
 
 # Load data
 data = pd.read_csv('Salary_Data.csv')
@@ -33,9 +34,24 @@ st.write('This app demonstrates how to perform simple linear regression using Py
 # Add a slider for the user to input x
 x = st.slider('Input x:', 0, 100)
 
-number = st.number_input('Insert a number')
-st.write('The current number is ', number)
+x = st.number_input('Insert a number', step=1)
+st.write('The current number is ', x)
 
 # Predict y from x and display the result
 y = predict(x)
 st.write(f'Predicted y: {y:.2f}')
+
+
+# Using "with" notation
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
+    )
+
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
+    with st.spinner("Loading..."):
+        time.sleep(1.5)
+    st.success("Done!")
